@@ -1,0 +1,143 @@
+/*body {
+    margin: 0;
+    font-family: consolas;
+}*/
+
+.hamburguer_responsive {
+    background-color: transparent;
+    padding: 0.8rem;
+    margin-right: 1rem;
+    
+}
+
+.dark_background{
+    background-color: black;
+    filter: opacity(0.6);
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-logo {
+    margin: 0;
+    
+
+
+    a{
+        text-decoration: none;
+        color: white;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-weight: 800;
+        padding: 0.5rem;
+        border-radius: 0.2rem;
+        filter: brightness(1);
+
+        &:hover {
+            background-color: black;
+            filter: opacity(0.6);
+        }
+    }
+}
+
+.header-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    font-weight: 800;
+    filter: brightness(1);
+}
+
+.header-menu {
+    display: none;
+    padding-bottom: 0.75rem;
+    animation: header_menu_active 2s;
+
+    ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding-top: 1.2rem;
+
+        li{
+            
+            a{
+                color: white;
+                text-decoration: none;
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-weight: 800;
+                text-align: right;
+                right: 0;
+                float: right;
+                padding: 0.5rem;
+                border-radius: 0.2rem;
+                filter: brightness(1);
+
+                &:hover {
+                    background-color: black;
+                    filter: opacity(0.8);
+        
+                }
+
+            }
+        }
+    }
+}
+
+@keyframes header_menu_active {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@media screen and (min-width: 992px) {
+    
+    .hamburguer_responsive {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-logo{
+
+        margin-left: 2rem;
+        a{
+            font-size: 1.2rem;
+        }
+    }
+
+    .header-top  {
+        padding-bottom: 0;
+    }
+
+    .header-menu {
+    padding-top: 0;
+    display: block !important;
+
+        ul{
+            flex-direction: row;
+            margin-right: 2rem;
+
+            li{
+                a{
+                    font-size: 1.2rem;
+                    margin: 0rem 0.2rem;
+                }
+            }
+        }
+    }
+
+    .header-btn {
+        display: none;
+        }
+}
