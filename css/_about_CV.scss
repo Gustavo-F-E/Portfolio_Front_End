@@ -1,0 +1,71 @@
+.container_cv{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4,auto);
+    row-gap: 4rem;
+    grid-template-areas: 
+        "portada_cv"
+        "descripcion_cv"
+        "front_end_cv"
+        "back_end_cv";
+    padding: 4rem 0rem;
+}
+
+.portada_cv{
+    display: flex;
+    flex-direction: column;
+    grid-area: portada_cv;
+    justify-content: center;
+    align-items: center;
+
+    h2{
+        font-size: 4rem;
+    }
+}
+
+.descripcion_cv{
+    grid-area: descripcion_cv;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p{
+        text-align: center;
+        width: 70vw;
+        font-size: 2rem;
+        padding: 1rem 0rem;
+    }
+}
+
+.front_end_cv{
+    grid-area: front_end_cv;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.back_end_cv{
+    grid-area: back_end_cv;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media all and (min-width: 576px) {
+
+}
+
+@media all and (min-width: 992px) {
+    .container_cv{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "portada_cv       portada_cv"
+        "descripcion_cv   descripcion_cv"
+        "front_end_cv     back_end_cv";
+    }
+}

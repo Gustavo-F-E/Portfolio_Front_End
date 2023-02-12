@@ -62,7 +62,7 @@
   color: white;
   font-weight: 800;
   text-align: center;
-  font-size: 1rem;
+  font-size: 2rem;
   padding: 0.2rem;
   font-weight: 400;
   filter: brightness(1);
@@ -129,7 +129,7 @@ footer {
     margin-top: 5rem;
   }
   .cabecera div p {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-top: 3rem;
   }
   /*Barra de Navegacion*/
@@ -142,9 +142,13 @@ footer {
     font-family: consolas;
 }*/
 .hamburguer_responsive {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.4);
   padding: 0.8rem;
-  margin-right: 1rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  width: 100%;
 }
 
 .dark_background {
@@ -155,10 +159,12 @@ footer {
 .header-top {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .header-logo {
   margin: 0;
+  padding-bottom: 0.5rem;
 }
 .header-logo a {
   text-decoration: none;
@@ -168,14 +174,17 @@ footer {
   padding: 0.5rem;
   border-radius: 0.2rem;
   filter: brightness(1);
+  height: 100%;
 }
 .header-logo a:hover {
-  background-color: black;
-  filter: opacity(0.6);
+  color: white;
+  filter: brightness(200%);
+  font-weight: 900;
 }
 
 .header-btn {
   background-color: transparent;
+  padding: 0rem 2rem 0.5rem 0rem;
   border: none;
   color: white;
   font-size: 2rem;
@@ -184,10 +193,14 @@ footer {
 }
 
 .header-menu {
+  position: fixed;
   display: none;
-  padding-bottom: 0.75rem;
-  -webkit-animation: header_menu_active 2s;
-          animation: header_menu_active 2s;
+  bottom: 3.5rem;
+  right: 0;
+  width: 100vw;
+  padding: 0rem 1rem 1.5rem 0rem;
+  animation: header_menu_active 2s;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 .header-menu ul {
   list-style: none;
@@ -211,17 +224,9 @@ footer {
   filter: brightness(1);
 }
 .header-menu ul li a:hover {
-  background-color: black;
-  filter: opacity(0.8);
-}
-
-@-webkit-keyframes header_menu_active {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  color: white;
+  filter: brightness(200%);
+  font-weight: 900;
 }
 
 @keyframes header_menu_active {
@@ -237,6 +242,8 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
   }
   .header-logo {
     margin-left: 2rem;
@@ -248,12 +255,18 @@ footer {
     padding-bottom: 0;
   }
   .header-menu {
+    position: static;
+    background-color: transparent;
+    right: 0;
+    padding-right: 0;
+    width: 50%;
     padding-top: 0;
     display: block !important;
   }
   .header-menu ul {
     flex-direction: row;
-    margin-right: 2rem;
+    float: right;
+    padding-right: 3rem;
   }
   .header-menu ul li a {
     font-size: 1.2rem;
@@ -263,7 +276,63 @@ footer {
     display: none;
   }
 }
+.container_cv {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, auto);
+  row-gap: 4rem;
+  grid-template-areas: "portada_cv" "descripcion_cv" "front_end_cv" "back_end_cv";
+  padding: 4rem 0rem;
+}
+
+.portada_cv {
+  display: flex;
+  flex-direction: column;
+  grid-area: portada_cv;
+  justify-content: center;
+  align-items: center;
+}
+.portada_cv h2 {
+  font-size: 4rem;
+}
+
+.descripcion_cv {
+  grid-area: descripcion_cv;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.descripcion_cv p {
+  text-align: center;
+  width: 70vw;
+  font-size: 2rem;
+  padding: 1rem 0rem;
+}
+
+.front_end_cv {
+  grid-area: front_end_cv;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.back_end_cv {
+  grid-area: back_end_cv;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media all and (min-width: 992px) {
+  .container_cv {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "portada_cv       portada_cv" "descripcion_cv   descripcion_cv" "front_end_cv     back_end_cv";
+  }
+}
 /*@import "clean-blog";*/
 /*@import "bootstrap";*/
-/*@import "font-awesome";*/
-/*# sourceMappingURL=styles.css.map */
+/*@import "font-awesome";*//*# sourceMappingURL=styles.css.map */

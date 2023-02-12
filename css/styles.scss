@@ -1,9 +1,11 @@
 
-@import "contenido";
+@use "contenido";
 
-@import "media_queries";
+@use "media_queries";
 
-@import "hamburguer_menu";
+@use "hamburguer_menu";
+
+@use "about_CV";
 
 /*@import "clean-blog";*/
 
